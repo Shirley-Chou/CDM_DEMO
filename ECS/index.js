@@ -20,7 +20,7 @@ app.post('/sendImage', (req, res) => {
 
     Promise.all(
         images.map((image) => {
-            axios.get(`${CONFIG.host}/${image}`, {
+            axios.get(`${CONFIG.CDMHOST}/${image}`, {
                 responseType: 'stream'
             }).then((response) => {
                 // const path = Path.resolve(__dirname, 'images', image);
