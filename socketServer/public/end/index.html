@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="pragma" content="no-cache"> 
+		<meta http-equiv="cache-control" content="no-cache"> 
+		<meta http-equiv="expires" content="0">
+		<title>Live Video</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+		<script src="js/common.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="header">
+			
+		</div>
+		<div id="videoCon">
+			<button class="ui-button" type="button" onclick="deletePoint()">Test</button>
+
+		</div>
+		
+        
+		
+		<script>
+		function createProject(){
+			var req = {
+        		"form":{
+        			"name": pname,
+        			"mainVideo": ""
+        		}
+        	};
+    		$.ajax({
+			    type : "POST",
+			    url : "/api/forms",
+			    contentType: "application/json; charset=UTF-8",
+			    data : JSON.stringify(req),
+			    success : function(data, status) {
+					if(status == "success"){
+						$("#projectName").val("");
+
+						getProjectList();
+						startProjectEdit(data._id, data.name);
+						
+
+					}else{
+						alert("创建失败");
+					}
+			    },
+			    error : function(error) {
+			    }
+			});
+		}
+
+		</script>
+	</body>
+</html>
