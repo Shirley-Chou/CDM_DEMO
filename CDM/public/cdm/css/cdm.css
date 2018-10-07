@@ -1,0 +1,336 @@
+#base {
+    position: relative;
+    display: none;
+}
+
+/* 计划表格 */
+
+.plan-table-tbody {
+    display: none;
+}
+
+#u876_div.selected, #u3383_div.selected {
+    background-color: #fff;
+}
+
+#u876_div.selected.mouseover, #u3383_div.selected.mouseover {
+    background-color: rgba(228, 243, 247, 1);
+}
+
+#u876_div.selected.select, #u3383_div.selected.select {
+    background-color: rgba(207, 233, 242, 1);
+}
+
+/* 拓扑图，副本 */
+
+#u1894, #u1791, #u4154, #u3266, .backbups-tab-title {
+    display: none;
+}
+
+/* 副本 */
+
+ul, ul li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'PingFangSC-Regular', 'PingFang SC';
+    font-weight: 400;
+    font-style: normal;
+    color: #666;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.backups-box {
+    width: 312px;
+    height: 308px;
+    overflow-y: scroll;
+}
+
+.backups-item {
+    position: relative;
+    width: 260px;
+    height: 60px;
+    padding-left: 15px;
+    text-align: left;
+    background: url(../image/icon/buckup_dot.png) no-repeat left 5px;
+}
+
+.backups-item time, .backups-item span {
+    display: block;
+}
+
+.backups-item time {
+    margin-bottom: 5px;
+}
+
+.backups-item span {
+    padding-left: 20px;
+}
+
+.backups-line {
+    position: absolute;
+    left: 4px;
+    top: 15px;
+    width: 2px;
+    height: 57px;
+    background: url(../image/icon/buckup_line.png) no-repeat;
+}
+
+.backups-cloud span {
+    background: url(../image/icon/buckup_cloud.png) no-repeat left 2px;
+    background-size: 16px 16px;
+}
+
+.backups-local span {
+    background: url(../image/icon/buckup_local.svg) no-repeat left 2px;
+    background-size: 16px 16px;
+}
+
+.backups-box .backups-item:last-child .backups-line {
+    display: none;
+}
+
+/* 文件系统 */
+
+.filesystem-table {
+    display: none;
+}
+
+/* 内容为空 */
+
+.ui-empty {
+    display: block;
+    position: absolute;
+    text-align: center;
+    font-family: 'PingFangSC-Regular', 'PingFang SC';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #999;
+}
+
+.ui-empty img {
+    display: block;
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+.plan-table-empty {
+    top: 310px;
+    left: 532px;
+    width: 300px;
+}
+
+.topology-empty {
+    top: 721px;
+    left: 364px;
+    width: 300px;
+}
+
+.filesystem-empty {
+    left: 250px;
+    top: 85px;
+    width: 300px;
+}
+
+.hasplan {
+    position: absolute;
+    left: 666px;
+    top: 906px;
+    width: 83px;
+    height: 32px;
+    font-family: 'PingFangSC-Regular', 'PingFang SC';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 32px;
+    background-color: rgba(211, 211, 211, 1);
+    box-sizing: border-box;
+    border: 1px solid rgba(211, 211, 211, 1);
+    border-radius: 2px;
+    cursor: default;
+}
+
+.backup-empty {
+    top: 725px;
+    left: 1074px;
+    width: 200px;
+}
+
+.backup-empty img {
+    width: 200px;
+}
+
+/* DataTable */
+
+table.dataTable {
+    width: 100%;
+    font-family: 'ArialMT', 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    line-height: normal;
+}
+
+table.dataTable.no-footer {
+    border-bottom: 0;
+}
+
+table.dataTable thead th, table.dataTable thead td, table.dataTable tbody th, table.dataTable tbody td {
+    padding: 0 0 0 10px;
+    border-bottom: 0;
+    font-weight: 400;
+    text-align: left;
+}
+
+table.dataTable thead th, table.dataTable tbody th {
+    height: 44px;
+    border-left: 1px solid #fff;
+    background-color: rgba(237, 240, 242, 1);
+}
+
+table.dataTable tbody td {
+    height: 38px;
+}
+
+table.dataTable thead th:first-child {
+    border-left: 0;
+}
+
+table.dataTable tbody tr.even {
+    background-color: rgba(244, 245, 246, 1);
+}
+
+table.dataTable tbody tr:hover {
+    background-color: rgba(228, 243, 247, 1);
+}
+
+table.dataTable tbody tr.selected {
+    background-color: rgba(207, 233, 242, 1);
+}
+
+table.dataTable thead .sorting_asc, table.dataTable thead .sorting_desc, table.dataTable thead .sorting {
+    background: rgba(237, 240, 242, 1);
+}
+
+.dataTables_empty {
+    line-height: 48px;
+}
+
+/* 执行计划表 */
+
+#executeTable_wrapper {
+    width: 800px;
+    margin-top: 81px;
+    margin-left: 30px;
+}
+
+.icon-success {
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+/* 数据利用遮罩 */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 10000px;
+    height: 10000px;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.298039;
+    z-index: 900;
+}
+
+/* 数据恢复表 */
+
+#restoreTable_wrapper {
+    width: 1245px;
+    top: 81px;
+    left: 30px;
+}
+
+.show-object {
+    display: block;
+    margin-left: 50px;
+    color: #3399FF;
+    cursor: pointer;
+}
+
+.restory-delete-btn {
+    color: #3399FF;
+    cursor: pointer;
+}
+
+.restory-delete-btn:hover {
+    text-decoration: underline;
+}
+
+#u2207, #u4465 {
+    z-index: 1000;
+}
+
+/* 副本表格 */
+
+#backupTable_wrapper {
+    width: 692px;
+    top: 149px;
+    left: 137px;
+}
+
+#backupTable_wrapper thead th {
+    background-color: rgba(225, 228, 229, 1);
+}
+
+.overview-box {
+    display: none;
+}
+
+#u2021, #u4279 {
+    position: absolute;
+}
+
+#u2043, #u4325 {
+    top: 456px;
+}
+
+#u2043_input, #u2045_input, #u4325_input, #u4327_input {
+    top: 1px;
+}
+
+#u895 {
+    left: 1054px;
+}
+
+#u899 {
+    left: 1070px;
+}
+
+/* 英文版 */
+
+#u3402 {
+    left: 1084px;
+}
+
+#u3406 {
+    left: 1100px;
+}
+
+#u3388 {
+    left: 174px;
+}
+
+#u3386 {
+    left: 193px;
+}

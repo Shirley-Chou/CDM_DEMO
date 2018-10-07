@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+
+</head>
+
+<body>
+    <input type="file" id="file" class="lve-file">
+    <button id="uploadVideoBtn">视频上传</button>
+    <script>
+        $(function () {
+            const Service = {};
+
+            Service.upload = function (url, options) {
+                return new Promise((resolve, reject) => {
+                    fetch(url, {
+                        method: 'POST',
+                        body: options
+                    }).then(res => {
+                        if (res.ok) {
+                            return res.json();
+                        } else {
+                            reject({ status: res.status })
+                        }
+                    }).then(data => resolve(data))
+                        .catch(error => {
+                            console.log('Error:', error.message);
+                            reject(error);
+                        })
+                });
+            };
+
+            Service.backup = function (url, options) {
+                return new Promise((resolve, reject) => {
+                    fetch(url, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(options)
+                    }).then(res => {
+                        if (res.ok) {
+                            return res.json();
+                        } else {
+                            reject({ status: res.status })
+                        }
+                    }).then(data => resolve(data))
+                        .catch(error => {
+                            console.log('Error:', error.message);
+                            reject(error);
+                        })
+                });
+            };
+
+            $('#uploadVideoBtn').click(function () {
+                const file = document.querySelector('#file');
+                const fileField = file.files[0];
+                const formData = new FormData();
+
+                formData.append('avatar', fileField);
+
+                Service.upload('/cdm/uploadImg', formData).then((data) => {
+                    Service.backup('/cdm/backupImg', { filename: fileField.name }).then((data) => { console.log("success") })
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+{
+    "ECSHOST": "http://127.0.0.1:8082",
+    "socketHost": "127.0.0.1",
+    "socketPort": "8083",
+    "port": "8081"
+}
