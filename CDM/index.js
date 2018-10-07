@@ -248,7 +248,8 @@ app.post('/cdm/readDir', async (req, res) => {
 })
 
 // socket
-const socketClient = new net.Socket(); //创建socket客户端
+const socketClient = new net.Socket();
+//创建socket客户端
 socketClient.setEncoding('binary');
 
 //连接到服务端
@@ -256,6 +257,20 @@ socketClient.connect(CONFIG.socketPort, CONFIG.socketHost, function () {
     //向端口写入数据到达服务端
     // socketClient.write('hello server'); 
 });
+// socketClient.on('data', function (data) {
+//     console.log('from server:' + data);
+//     //得到服务端返回来的数据
+// });
+// socketClient.on('error', function (error) {
+//     //错误出现之后关闭连接
+//     console.log('error:' + error);
+//     socketClient.destory();
+// });
+// socketClient.on('close', function () {
+//     //正常关闭连接
+//     console.log('Connection closed');
+// });
+
 app.post('/cdm/action', (req, res) => {
     socketClient.write("PhotoHandle:Action=" + req.body.Action + "|");
     res.send({});
